@@ -38,6 +38,10 @@ enum COMMANDS {
 };
 ```
 
-There is no command acknowlegement mechanism. The control box sends commands into the void and hopes the pad controller recieves them.
+When the pad controller receives a command, it acknowleges with a single byte that contains the states of each servo and the ignitor:
+```
+| Bit 7  | Bit 6  | Bit 5  | Bit 4  | Bit 3   | Bit 2  | Bit 1  | Bit 0 |
+| NOS2   | NOS1   | N2     | ETOH   | IGNITER | Unspecified             |
+```
 
 If the pad controller recieves an invalid command, it ignores it.
