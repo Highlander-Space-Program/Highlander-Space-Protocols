@@ -40,8 +40,8 @@ enum COMMANDS {
 
 When the pad controller receives a command, it acknowleges with a single byte that contains the states of each servo and the ignitor. A 1 indicates that the servo is open or that an ignitor is triggered.
 ```
-| Bit 7  | Bit 6  | Bit 5  | Bit 4  | Bit 3   | Bit 2  | Bit 1  | Bit 0 |
-| NOS2   | NOS1   | N2     | ETOH   | IGNITER | Unspecified             |
+| Bit 7  | Bit 6  | Bit 5  | Bit 4  | Bit 3  | Bit 2  | Bit 1  | Bit 0   |
+| Unspecified              | NOS2   | NOS1   | N2     | ETOH   | IGNITER |
 ```
 
 For example, recieving `10110111` from the pad controller would indicate that the `NOS2`, `N2`, and `ETOH` servos are open.
